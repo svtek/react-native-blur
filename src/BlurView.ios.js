@@ -25,6 +25,7 @@ class BlurView extends Component {
 BlurView.propTypes = {
   ...(ViewPropTypes || View.propTypes),
   blurType: PropTypes.oneOf([
+    'none',
     'dark',
     'light',
     'xlight',

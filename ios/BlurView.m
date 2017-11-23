@@ -65,9 +65,14 @@
 
 - (void)updateBlurEffect
 {
-  UIBlurEffectStyle style = [self blurEffectStyle];
-  self.blurEffect = [BlurEffectWithAmount effectWithStyle:style andBlurAmount:self.blurAmount];
-  self.blurEffectView.effect = self.blurEffect;
+  if ([self.blurType isEqual: @"none"]) {
+    self.blurEffect = NULL;
+    self.blurEffectView.effect = NULL;
+  } else {
+    UIBlurEffectStyle style = [self blurEffectStyle];
+    self.blurEffect = [BlurEffectWithAmount effectWithStyle:style andBlurAmount:self.blurAmount];
+    self.blurEffectView.effect = self.blurEffect;
+  }
 }
 
 @end
